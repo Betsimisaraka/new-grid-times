@@ -33,6 +33,10 @@ const Links = styled.a`
     border-top: 1px solid #D0CDC8;
     padding-top: 20px;
     padding-bottom: 20px;
+
+    @media ${QUERIES.tabletOnly} {
+      border: none;
+    }
   }
 
   &:first-child {
