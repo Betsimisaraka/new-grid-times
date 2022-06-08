@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 
 import { MARKET_DATA, SPORTS_STORIES } from '../../data';
+import { QUERIES } from '../../constants';
 
 import MarketCard from '../MarketCard';
 import SectionTitle from '../SectionTitle';
@@ -47,14 +48,40 @@ const SpecialtyStoryGrid = () => {
 const Wrapper = styled.div`
   display: grid;
   gap: 48px;
+
+  @media ${QUERIES.desktopAndUp} {
+    gap: 1rem;
+    grid-template-columns: 50% 50%;
+  }
 `;
 
 const MarketsSection = styled.section``;
 
-const MarketCards = styled.div``;
+const MarketCards = styled.div`
+  display: grid;
+  gap: 16px;
+  grid-template-columns:
+  repeat(auto-fill, minmax(183px, 1fr));
+`;
 
-const SportsSection = styled.section``;
+const SportsSection = styled.section`
 
-const SportsStories = styled.div``;
+  @media ${QUERIES.desktopAndUp} {
+    border-left: 1px solid #D0CDC8;
+    padding-left: 1rem;
+  }
+`;
+
+const SportsStories = styled.div`
+  display: grid;
+  gap: 16px;
+  grid-template-columns:
+  repeat(auto-fill, minmax(150px, 1fr));
+
+  @media ${QUERIES.tabletAndUp} {
+    overflow: auto;
+    grid-template-columns: repeat(5, 150px);
+  }
+`;
 
 export default SpecialtyStoryGrid;
